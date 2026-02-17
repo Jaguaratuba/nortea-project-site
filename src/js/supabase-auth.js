@@ -15,10 +15,32 @@ const SupabaseAuth = {
     },
 
     async sign_up(email, password, metadata = {}){
+        try {
+            const { data, error } = await window.supabaseClient.auth.signUp({
+                email: email,
+                password: password,
+                options: {
+                    data: metadata
+                }
+            });
 
+            if (error) throw error;
+
+            return { success: true, user: data.user, session: data.session };
+        } catch (error) {
+            return { success: false, error: error.message };
+        }
     },
 
-    async sign_out(){},
+    async sign_out(){
+        try {
+            const { error } = await window.supabaseClient.auth.signOut();
+            if (error) throw error;
+                return { success: true};
+        } catch (error) {
+            return { error: error.message };
+        }
+    },
 
     async get_current_user(){
         try {
