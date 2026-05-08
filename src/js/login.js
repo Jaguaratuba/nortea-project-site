@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!email || !password) {
             showError("Email ou senha obrigatórios")
             return
-        } 
+        }
 
         setLoadingState(true);
 
