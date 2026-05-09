@@ -65,10 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     async function checkExistingSession() {
-        const { success, session } = await window.SupabaseAuth.getSession();
+        const { success, session } = await window.SupabaseAuth.get_session();
 
         if (success && session) {
-            const { user } = await window.SupabaseAuth.getCurrentUser();
+            const { user } = await window.SupabaseAuth.get_current_user();
             if (user) {
                 handleSuccessfulLogin(user);
             }

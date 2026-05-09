@@ -173,7 +173,8 @@ nav button.hedrBtnCadast i {
 .hero {
   display: flex;
   align-items: center;
-  height: 55vh;
+  min-height: 55vh;
+  width: 100%;
   position: relative;
   padding: 0;
   overflow: hidden;
@@ -181,9 +182,8 @@ nav button.hedrBtnCadast i {
 
 /* Organização vertical do texto */
 .hero-text {
-  width: 50%;
-  padding-left: 100px;
-  padding-right: 40px;
+  width: min(50%, 650px);
+  padding: 0 clamp(20px, 5vw, 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -194,35 +194,40 @@ nav button.hedrBtnCadast i {
 
 /* Estilo do título principal */
 .hero h2 {
-font-size: 3.8rem;
-max-width: 700px;
-margin-bottom: 20px;
-letter-spacing: 0.8px;
-font-family: 'Montserrat', sans-serif;
-font-weight: 900;
-text-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  max-width: 700px;
+  margin-bottom: 20px;
+  letter-spacing: 0.8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+}
+
+.hero-phrase {
+  white-space: nowrap;
 }
 
 /* Estilo do texto descritivo */
 .hero p {
-max-width: 600px;
-margin-bottom: 30px;
-color: #d4cdca;
-font-weight: 500;
+  max-width: 600px;
+  margin-bottom: 30px;
+  color: #d4cdca;
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
 }
 
 /* Botão principal de ação */
 .hero button {
-padding: 14px 32px;
-border: none;
-border-radius: 6px;
-background: #dd7b0b;
-color: #020617;
-font-size: 1.1rem;
-cursor: pointer;
-font-family: 'Montserrat', sans-serif;
-font-weight: 500;
-letter-spacing: 0.3px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  background: #dd7b0b;
+  color: #020617;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 /* Hover do botão principal */
@@ -235,11 +240,34 @@ letter-spacing: 0.3px;
 .hero-slider {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 100vw;
+  left: 0;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: 0;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .hero-text {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-slider {
+    position: relative;
+    height: 45vh;
+  }
+
+  .hero h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
 }
 
 /* Faixa divisória com degradê */
