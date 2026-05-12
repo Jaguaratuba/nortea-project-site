@@ -22,7 +22,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to left, #9574af, #491775, #000);
+  background: linear-gradient(to left, #9574af, #491775, #140125, #000000);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+header h1 {
+  color: #38bdf8;
 }
 
 .logo {
@@ -33,7 +39,8 @@ header {
 
 .logo img {
   height: 50px;
-  filter: drop-shadow(0 0 34px rgb(255, 145, 0));
+  width: auto;
+  filter: brightness(0.8) drop-shadow(0 0 20px rgba(255, 145, 0, 0.349));
 }
 
 nav {
@@ -42,28 +49,68 @@ nav {
   align-items: center;
 }
 
-/* HEADER BUTTONS */
 nav button {
+  line-height: 1;
   border: none;
   border-radius: 6px;
   background: #dd7b0bec;
-  color: #fff;
+  color: #ffffff;
+  padding: 0;
+  height: auto;
   cursor: pointer;
-  box-shadow: 0 0 20px rgb(5, 33, 44);
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500; /* HEADER BUTTONS agora weight 500 */
+  font-weight: 700;
   letter-spacing: 0.3px;
+  box-shadow: 0 0 20px rgb(5, 33, 44);
 }
 
-.hedrBtn {
+nav button.hedrBtn {
+  font-weight: 500;
   font-size: 0.8rem;
-  padding: 4px 20px;
-  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 20px;
+  height: 28px;
+  border-radius: 6px;
+  line-height: 1;
+  min-height: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+nav button.hedrBtn i {
+  margin-left: 8px;
+  font-size: 1rem;
 }
 
 .hedrBtn:hover {
-  background: #7edefc21;
+  background-color: #e6a04a;
+  box-shadow: 0 0 8px rgba(10, 7, 2, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   transform: scale(1.05);
+}
+
+.hedrBtnCadast {
+  font-weight: 700;
+  background: #dd7b0b;
+  color: white;
+  border-radius: 16px;
+  padding: 8px 25px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.hedrBtnCadast:hover {
+  box-shadow: 0 0 8px rgba(10, 7, 2, 0.5);
+  background-color: #e6a04a;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav button.hedrBtnCadast i {
+  margin-left: 8px;
+  font-size: 0.9rem;
 }
 
 /* ================= PERFIL HEADER ================= */
