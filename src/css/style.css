@@ -10,7 +10,7 @@
 /* Fundo, cor do texto e fonte padrão */
 body { 
   background: white;
-  color: #d6d1d6;
+  color: #f7f7f7;
   font-family: Arial, Helvetica, sans-serif;
   padding: 0 0px;
 }
@@ -42,7 +42,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to left, #9574af, #491775, #140125, #000000);
+  background:#f7f7f7;
 }
 
 /* Cor do título do cabeçalho */
@@ -85,9 +85,8 @@ header h1 {
 
 /* Tamanho da logo e efeito de brilho */
 .logo img {
-  height: 50px;
-  width: auto;
-  filter: brightness(0.8) drop-shadow(0 0 20px rgba(255, 145, 0, 0.349));
+  height: 80px;
+  width: auto;;
 }
 
 /* ------------------------------------------------ NAV ------------------------------------------------ */
@@ -104,15 +103,14 @@ nav button {
   line-height: 1;
   border: none;
   border-radius: 6px;
-  background: #dd7b0bec; 
-  color: #ffffff;
+  background: #1e2c3a; 
+  color: #f7f7f7;
   padding: 0;
   height: auto;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 0.3px;
-  box-shadow: 0 0 20px rgb(5, 33, 44);
 }
 
 /* Botões comuns do menu */
@@ -145,17 +143,17 @@ nav button.hedrBtnCadast i {
 
 /* Efeito hover dos botões comuns */
 .hedrBtn:hover {
-  background-color: #e6a04a;
-  box-shadow: 0 0 8px rgba(10, 7, 2, 0.5);
+  background-color: rgb(230, 151, 41);
+  box-shadow: 0 0 8px rgba(10, 7, 2, 0.205);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 /* Botão de destaque */
 .hedrBtnCadast {
   font-weight: 700;
-  background: #dd7b0b;
-  color: white;
+  background: #1e2c3a;
+  color: #f7f7f7;
   border-radius: 16px;
   padding: 8px 25px;
   font-size: 0.8rem;
@@ -164,8 +162,8 @@ nav button.hedrBtnCadast i {
 }
 /* Hover do botão de destaque */
 .hedrBtnCadast:hover {
-  box-shadow: 0 0 8px rgba(10, 7, 2, 0.5);
-  background-color: #e6a04a;
+  box-shadow: 0 0 8px rgba(10, 7, 2, 0.205);
+  background-color: rgb(230, 151, 41);
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -176,7 +174,7 @@ nav button.hedrBtnCadast i {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 55vh;
+  min-height: 70vh;
   width: 100%;
   position: relative;
   padding: 0;
@@ -200,7 +198,7 @@ nav button.hedrBtnCadast i {
 .hero h2 {
   font-size: clamp(2rem, 4vw, 3.8rem);
   max-width: 700px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   letter-spacing: 0.8px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
@@ -225,8 +223,8 @@ nav button.hedrBtnCadast i {
   padding: 14px 32px;
   border: none;
   border-radius: 6px;
-  background: #dd7b0b;
-  color: #020617;
+  background: #1e2c3a; 
+  color: #e5e6f7;
   font-size: 1.1rem;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
@@ -236,8 +234,10 @@ nav button.hedrBtnCadast i {
 
 /* Hover do botão principal */
 .hero button:hover {
-  box-shadow: var(--text-color);
-  background-color: #ffb057;
+  box-shadow: 0 0 8px rgba(10, 7, 2, 0.39);
+  background-color: #16212c;
+  transition: transform 0.3s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transform: scale(1.02);
 }
 
 /* Container do slideshow */
@@ -274,7 +274,7 @@ nav button.hedrBtnCadast i {
 .hero-divider {
   width: 100%;
   height: 25px;
-  background: linear-gradient(to left, #9574af, #330e52, #000000);
+  background: #2c3f4e;
   margin: 0 0 2rem 0;
 }
 
@@ -400,7 +400,7 @@ nav button.hedrBtnCadast i {
 
 /* Seção de recursos */
 .features {
-  background: linear-gradient(to right, #855ea3, #3b0d63, #491775);
+  background: linear-gradient(to right, #587085, #2c3f50, #2c3f50);
   padding: 60px 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -423,14 +423,14 @@ nav button.hedrBtnCadast i {
 /* Título do card */
 .feature h3 {
   margin-bottom: 10px;
-  color: #491775
+  color:#16212c;
 }
 
 /* Ícone do card */
 .feature i {
   font-size: 3rem;
   margin-bottom: 15px;
-  color: #491775;
+  color: #16212c;
   display: block;
 }
 
@@ -473,7 +473,7 @@ footer {
   padding: 20px;
   text-align: center;
   font-size: 0.85rem;
-  background: #10021b;
+  background: #000000;
   color: #94a3b8;
 }
 
