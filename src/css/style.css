@@ -9,7 +9,6 @@
 
 /* Fundo, cor do texto e fonte padrão */
 body { 
-  background: white;
   color: #f7f7f7;
   font-family: Arial, Helvetica, sans-serif;
   padding: 0 0px;
@@ -19,6 +18,15 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+
+/* Estilo exclusivo para a página de login */
+body.login-body {
+  background-image: url("../../public/images/paisagem.png");
+  background-size: cover;       /* Faz a imagem cobrir a tela toda */
+  background-position: center;  /* Centraliza a imagem */
+  background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+  background-repeat: no-repeat;
 }
 
 /* ------------------------------------------------ ANIMAÇÃO FADE ------------------------------------------------ */
@@ -43,6 +51,16 @@ header {
   justify-content: space-between;
   align-items: center;
   background:#f7f7f7;
+}
+
+header.header-login {
+  background: rgba(247, 247, 247, 0.25); /* transparente */
+  backdrop-filter: blur(10px);            /* efeito vidro */
+  -webkit-backdrop-filter: blur(10px);     /* suporte Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  /* opcional: deixa mais “leve” */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Cor do título do cabeçalho */
@@ -102,9 +120,8 @@ nav{
 nav button {
   line-height: 1;
   border: none;
-  border-radius: 6px;
-  background: #1e2c3a; 
-  color: #f7f7f7;
+  background: transparent; /* remove fundo */
+  color: #000000;
   padding: 0;
   height: auto;
   cursor: pointer;
@@ -143,7 +160,6 @@ nav button.hedrBtnCadast i {
 
 /* Efeito hover dos botões comuns */
 .hedrBtn:hover {
-  background-color: rgb(230, 151, 41);
   box-shadow: 0 0 8px rgba(10, 7, 2, 0.205);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   transform: scale(1.02);
@@ -449,10 +465,10 @@ nav button.hedrBtnCadast i {
 /* ------------------------------------------------ ROOT ------------------------------------------------ */
 
 :root{
-  --accent-color: #491775;
+  --accent-color: rgba(44, 63, 80, 0.996);
   --base-color: white;
   --text-color: #242324;
-  --input-color: #F3F0FF;
+  --input-color: #f0f8ff;
 }
 
 .wrapper form div.incorrect input{
@@ -483,15 +499,14 @@ footer {
 
 .login-section-login {
   position: relative;
-  background-image: url("../../public/images/background.jpg");
-  background-size: cover;
-  background-position: bottom center;
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: 100%;
+  width: min(100%, 760px);
+  margin: 60px auto;
+  padding: 40px 0;
+  background: rgb(255, 255, 255);
 }
 
 .login-section-login::after {
@@ -617,11 +632,11 @@ form button:focus{
 }
 
 .wrapper-login{
-  background-color: var(--base-color);
+  background-color: transparent;
   width: min(600px, calc(100% - 80px));
   padding: 40px;
   border-radius: 0;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
