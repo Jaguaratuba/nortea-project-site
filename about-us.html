@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Login</title>
+        <title>About Us</title>
         <link rel="stylesheet" href="src/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
         <header class="header-login">
             <div class="logo">
                 <img src="public/images/Logo.png" alt="Logo Pilar">
-                <h1></h1>
+                <h1>SOBRE</h1>
             </div>
             <nav>
                 <nav class="nav-link-normal-button">
@@ -34,35 +34,10 @@
                 </button>
             </nav>
         </header>
-        <section class="login-section-login">
-            <div class="wrapper-login">
-                <h1 id="reset-title">Redefinição de Senha</h1>
-                <p id="reset-comment">Insira o e-mail associado à sua conta para receber um link de redefinição.</p>
-                <p id="error-message"></p>
-                <form id="form">
-                <div>
-                    <label for="email-input">
-                    <span>@</span>
-                    </label>
-                    <input type="email" name="email" id="email-input" placeholder="Email">
-                </div>
-                <button type="submit">Enviar código</button>
-                </form>
-                <p>Novo aqui? <a href="register.html">Crie uma conta</a></p>
-        </section>
         
         <footer>
             © 2026 - Footer show de bola
         </footer>
-
-
-        <script>
-            const button = document.getElementById('ctaBtn');
-
-            button.addEventListener('click', () => {
-                alert('Botão clicado. Aqui você pode redirecionar ou abrir um formulário.');
-            });
-        </script>
 
         <script type="module" src="/src/js/supabase-config.js"></script>
         <script src="/src/js/supabase-auth.js" defer></script>

@@ -18,35 +18,38 @@
                 <h1></h1>
             </div>
             <nav>
-                <button class="hedrBtn" onclick="location.href='index.html'">INÍCIO</button> 
-                <button class="hedrBtn">AJUDA</button>
-                <button class="hedrBtn">SOBRE</button>
+                <nav class="nav-link-normal-button">
+                    <button class="hedrBtn" onclick="location.href='index.html'">INÍCIO</button> 
+                    <button class="hedrBtn" onclick="location.href='help.html'">AJUDA</button>
+                    <button class="hedrBtn" onclick="location.href='about-us.html'">SOBRE</button>
+                </nav>
+
                 <div class="header-profile">
-                <div class="header-avatar" id="headerAvatar">
-                    <i class='bx bx-user'></i>
-                </div>
+                    <div class="header-avatar" id="headerAvatar">
+                        <i class='bx bx-user'></i>
+                    </div>
 
-                <div class="header-menu" id="headerMenu">
-                <button>
-                    <i class='bx bx-cog'></i>
-                    Configurações
-                </button>
+                    <div class="header-menu" id="headerMenu">
+                    <button>
+                        <i class='bx bx-cog'></i>
+                        Configurações
+                    </button>
 
-                <button>
-                    <i class='bx bx-envelope'></i>
-                    Mensagens
-                </button>
+                    <button>
+                        <i class='bx bx-envelope'></i>
+                        Mensagens
+                    </button>
 
-                <button>
-                    <i class='bx bx-archive'></i>
-                    Arquivos
-                </button>
+                    <button>
+                        <i class='bx bx-archive'></i>
+                        Arquivos
+                    </button>
 
-                <button class="logout">
-                    <i class='bx bx-arrow-from-left'></i>
-                    Sign out
-                </button>
-                </div>
+                    <button class="logout">
+                        <i class='bx bx-arrow-from-left'></i>
+                        Sign out
+                    </button>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -123,10 +126,14 @@
             © 2026 - Footer show de bola
         </footer>
 
-
-        <!-- JS externo -->
-        <script src="src/js/icon.js" defer></script>
-        <script src="src/js/headerMenu.js" defer></script>
+        <script type="module" src="/src/js/supabase-config.js"></script>
+        <script src="/src/js/supabase-auth.js" defer></script>
+        <script src="/src/js/login.js" defer></script>
+        <script src="/src/js/animationbutton.js" defer></script>
+        <script src="/src/js/loginScroll.js" defer></script>
+        <script src="/src/js/animationcarrosel.js" defer></script>
+        <script src="/src/js/icon.js" defer></script>
+        <script src="/src/js/headerMenu.js" defer></script>
 
     </body>
 </html> 

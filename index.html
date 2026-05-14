@@ -23,10 +23,15 @@
                 <h1></h1>
             </div>
             <nav>
-                <button class="hedrBtn" onclick="location.href='index.html'">INÍCIO</button> 
-                <button class="hedrBtn">AJUDA</button>
-                <button class="hedrBtn">SOBRE</button>
-                <button class="hedrBtnCadast" id="loginBtn" onclick="location.href='login.html'">ENTRAR<i class="bi bi-door-closed"></i></button>
+                <nav class="nav-link-normal-button">
+                    <button class="hedrBtn" onclick="location.href='index.html'">INÍCIO</button> 
+                    <button class="hedrBtn" onclick="location.href='help.html'">AJUDA</button>
+                    <button class="hedrBtn" onclick="location.href='about-us.html'">SOBRE</button>
+                </nav>
+
+                <button class="hedrBtnCadast" id="loginBtn" onclick="location.href='login.html'">
+                    ENTRAR <i class="bi bi-door-closed"></i>
+                </button>
             </nav>
         </header>
 
@@ -125,6 +130,7 @@
             });
         </script>
 
+        <script type="module" src="/src/js/supabase-config.js"></script>
         <script src="/src/js/supabase-auth.js" defer></script>
         <script src="/src/js/login.js" defer></script>
         <script src="/src/js/animationbutton.js" defer></script>
