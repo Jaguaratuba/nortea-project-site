@@ -18,14 +18,28 @@ html, body {
   margin: 0;
 }
 
-body.login-body {
+body.login-body,
+body.reset-body,
+body.register-body {
   display: flex;
   flex-direction: column;
-  background-image: url("../../public/images/paisagem.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+body.register-body {
+  background-image: url("../../public/images/paisagem.png");
+}
+
+body.login-body{
+  background-image: url("../../public/images/registropaisagem.jpg");
+}
+
+body.reset-body{
+  background-image: url("../../public/images/paisagem.png");
 }
 
 /* ------------------------------------------------ ANIMAÇÃO FADE ------------------------------------------------ */
@@ -158,19 +172,19 @@ nav button.hedrBtnCadast i {
 
 .hedrBtnCadast {
   font-weight: 700;
-  background: rgba(169, 174, 184, 0.308);
+  background: rgba(207, 212, 221, 0.308);
   color: #000000;
   border-radius: 16px;
   padding: 8px 25px;
   font-size: 0.8rem;
   cursor: pointer;
   letter-spacing: 0.3px;
-  box-shadow: 0 0 3px rgba(10, 7, 2, 0.205);
+  box-shadow: 0 0 6px rgba(10, 7, 2, 0.205);
 }
 
 .hedrBtnCadast:hover {
   box-shadow: 0 0 8px rgba(10, 7, 2, 0.205);
-  background-color: rgba(207, 212, 221, 0.308);
+  background-color:   rgba(169, 174, 184, 0.308);
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -409,10 +423,10 @@ nav button.hedrBtnCadast i {
 /* ------------------------------------------------ ROOT ------------------------------------------------ */
 
 :root{
-  --accent-color: rgba(44, 63, 80, 0.996);
-  --base-color: white;
+  --accent-color: #2c3f50;
+  --base-color: rgb(255, 255, 255);
   --text-color: #242324;
-  --input-color: #f0f8ff;
+  --input-color: #000000;
 }
 
 .wrapper form div.incorrect input{
@@ -426,16 +440,17 @@ nav button.hedrBtnCadast i {
 /* ------------------------------------------------ FOOTER ------------------------------------------------ */
 
 footer {
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   font-size: 0.85rem;
   background: #000000;
   color: #94a3b8;
 }
 
-/* ------------------------------------------------ LOGIN SECTION ------------------------------------------------ */
+/* ------------------------------------------------ LOGIN/RESET/REGISTER SECTION ------------------------------------------------ */
 
-.login-section-login {
+.login-section-login,
+.reset-section-reset {
   position: relative;
   display: flex;
   align-items: center;
@@ -448,7 +463,8 @@ footer {
   background: rgb(255, 255, 255);
 }
 
-.login-section-login::after {
+.login-section-login::after,
+.reset-section-reset::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -458,13 +474,13 @@ footer {
 /* ------------------------------------------------ FORM ------------------------------------------------ */
 
 form{
-  width: min(400px, 100%);
-  margin-top: 20px;
-  margin-bottom: 50px;
+  width: min(22rem, 90%);
+  margin-top: 5vh;
+  margin-bottom: 1vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 0.50rem;
 }
 
 form > div{
@@ -486,6 +502,7 @@ form label{
   align-items: center;
   font-size: 1.5rem;
   font-weight: 500;
+  border-color: #38bdf8;
 }
 
 form input{
@@ -496,9 +513,9 @@ form input{
   padding: 1em;
   font: inherit;
   border-radius: 0 10px 10px 0;
-  border: 2px solid var(red);
+  border: 2px solid rgba(154, 172, 187, 0.171);
   border-left: none;
-  background-color: var(red);
+  background-color: rgba(255, 255, 255, 0.527);
   transition: 150ms ease;
 }
 
@@ -528,27 +545,37 @@ form button:hover, form button:focus{
 
 /* ------------------------------------------------ WRAPPER ------------------------------------------------ */
 
-.wrapper, .wrapper-register{
+.wrapper-register {
   box-sizing: border-box;
-  background-color: var(--base-color);
-  width: max(40%, 600px);
-  padding: 10px;
+  background: rgba(247, 247, 247, 0.432);
+  width: min(100%, 600px); 
+  height: max-content;
+  backdrop-filter: blur(10px);
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin: 0; /* Garante que fique travado na esquerda */
+  flex: 1; 
+  align-self: flex-start;
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.411);
 }
 
-.wrapper-register{ flex: 1; align-self: flex-start; }
+.wrapper-register p{
+  color: #000;
+}
 
 .wrapper-register h1{
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   font-family: 'Montserrat', sans-serif;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
+  color: #000000;
 }
 
 .wrapper-login{
@@ -638,10 +665,13 @@ a:hover{ text-decoration: underline; }
   body.login-body nav { display: none; }
   body.login-body header { gap: 0; }
 
-  .wrapper-login h1, .wrapper-register h1 { font-size: 2.2rem; }
+  .wrapper-login h1 { font-size: 2.2rem; }
+  .wrapper-register h1 { font-size: 1.5rem; }
   .wrapper-login, .wrapper-register { padding: 20px; }
 
   form label { height: 40px; width: 40px; font-size: 1.2rem; }
   form input { height: 40px; padding: 0.8em; font-size: 0.9rem; }
   form button { padding: 0.7em 3em; font-size: 0.9rem; }
 }
+
+/* ------------------------------------------------ REGISTER ------------------------------------------------ */
