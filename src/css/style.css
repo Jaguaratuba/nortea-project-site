@@ -456,7 +456,7 @@ footer {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: min(100%, 760px);
+  width: min(100%, 650px);
   flex: 1; 
   margin: 0 auto; 
   padding: 40px 0;
@@ -547,7 +547,7 @@ form button:hover, form button:focus{
 
 .wrapper-register {
   box-sizing: border-box;
-  background: rgba(247, 247, 247, 0.432);
+  background: rgb(247, 247, 247);
   width: min(100%, 600px); 
   height: max-content;
   backdrop-filter: blur(10px);
@@ -569,7 +569,7 @@ form button:hover, form button:focus{
 }
 
 .wrapper-register h1{
-  font-size: 2.5rem;
+  font-size: 3.0rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -578,7 +578,8 @@ form button:hover, form button:focus{
   color: #000000;
 }
 
-.wrapper-login{
+.wrapper-login,
+.wrapper-reset {
   background-color: transparent;
   width: min(600px, calc(100% - 80px));
   padding: 40px;
@@ -591,7 +592,8 @@ form button:hover, form button:focus{
   margin: 0 auto;
 }
 
-.wrapper-login h1{
+.wrapper-login h1,
+.wrapper-reset h1 {
   font-size: 3.5rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -615,6 +617,8 @@ form button:hover, form button:focus{
 
 .wrapper-login p{ color: rgb(0, 0, 0); }
 
+.wrapper-reset p{ color: #000000; }
+
 #reset-comment {
     max-width: 600px;
     color: #000000;
@@ -624,7 +628,8 @@ form button:hover, form button:focus{
     margin: 0 auto;
 }
 
-.wrapper-login form{
+.wrapper-login form,
+.wrapper-reset form {
   width: min(400px, 100%);
   margin-top: 20px;
   margin-bottom: 10px;
@@ -636,8 +641,8 @@ form button:hover, form button:focus{
 
 /* ------------------------------------------------ ERROR ------------------------------------------------ */
 
-#error-message, .wrapper-login #error-message{ color:#f06272; }
-.wrapper-login #error-message{ margin-bottom: 10px; }
+#error-message, .wrapper-login #error-message, .wrapper-reset #error-message{ color:#f06272; }
+.wrapper-login #error-message, .wrapper-reset #error-message{ margin-bottom: 10px; }
 form div.incorrect label{ background-color: #f06272; }
 form div.incorrect input{ border-color: #f06272; }
 
@@ -646,7 +651,7 @@ form div.incorrect input{ border-color: #f06272; }
 a{ text-decoration: none; color: var(--accent-color); }
 a:hover{ text-decoration: underline; }
 
-.wrapper-login p a { color: rgb(39, 78, 163); }
+.wrapper-login p a, .wrapper-reset p a { color: rgb(39, 78, 163); }
 
 /* ------------------------------------------------ RESPONSIVIDADE HEADER (820px) ------------------------------------------------ */
 
@@ -665,9 +670,9 @@ a:hover{ text-decoration: underline; }
   body.login-body nav { display: none; }
   body.login-body header { gap: 0; }
 
-  .wrapper-login h1 { font-size: 2.2rem; }
+  .wrapper-login h1, .wrapper-reset h1 { font-size: 2.2rem; }
   .wrapper-register h1 { font-size: 1.5rem; }
-  .wrapper-login, .wrapper-register { padding: 20px; }
+  .wrapper-login, .wrapper-reset, .wrapper-register { padding: 20px; }
 
   form label { height: 40px; width: 40px; font-size: 1.2rem; }
   form input { height: 40px; padding: 0.8em; font-size: 0.9rem; }
