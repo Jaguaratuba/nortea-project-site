@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', ()=> {
-    const form = document.getElementById('reset-password-form');
+    const form = document.getElementById('form');
     const errorMessage = document.getElementById('error-message');
     const newPasswordSection = document.getElementById('new-password-section');
     const newPasswordError = document.getElementById('new-password-error');
@@ -23,9 +23,42 @@ document.addEventListener('DOMContentLoaded', ()=> {
         showNewPasswordView();
     }
 
-    // ---------- FORM 1: PEDIR EMAIL DE REDEFINIÇÃO ----------
+    // ---------- FORM 1: PEDIR EMAIL DE REDEFINIÇÃO ---------- 
+
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (inRecoveryMode) return;
+
+            showMessage(errorMessage, "", ""); // Limpa mensagens anteriores
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                showMessage(errorMessage, "Por favor, insira um email válido.", "red");
+                return;
+            }
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            setLoading(submitBtn, true, "Enviar email de recuperação", "Enviando...");
+            const result = await window.SupabaseAuth.reset_password_for_email(email);
+            setLoading(submitBtn, false, "Enviar email de recuperação", "Enviar email de recuperação");
+
+            // Mostra feedback (verde = sucesso, vermelho = erro)
+            if (result.success) {
+                showMessage(
+                    errorMessage,
+                    "Enviámos um link para o seu email. Verifique a caixa de entrada.",
+                    "#4CAF50"
+                );
+            } else {
+                showMessage(errorMessage, result.error || "Erro ao enviar email", "#ff4444");
+            }
+        });
+    }
 
     // ---------- FORM 2: DEFINIR NOVA SENHA ----------
+
+    
 
     // ---------- HELPERS ----------
 
@@ -50,4 +83,4 @@ document.addEventListener('DOMContentLoaded', ()=> {
         btn.textContent = isLoading ? loadingText : idleText;
         btn.style.opacity = isLoading ? "0.6" : "1";
     }
-});
+}); 

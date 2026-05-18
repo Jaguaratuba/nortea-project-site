@@ -47,4 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.transform = 'scale(1)';
     });
   });
+
+  /* Logout: encerra sessão e redireciona para a página inicial
+  const logoutBtn = menu.querySelector('.logout');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      logoutBtn.disabled = true;
+
+      if (window.SupabaseAuth) {
+        await window.SupabaseAuth.sign_out();
+      }
+      sessionStorage.removeItem('isLoggedIn');
+      sessionStorage.removeItem('userEmail');
+
+      window.location.href = 'index.html';
+    });
+  }
+  */
 });

@@ -66,8 +66,32 @@ const SupabaseAuth = {
         return window.supabaseClient.auth.onAuthStateChange((event, session) => {
             callback(event, session);
         });
-    }
+    },
+
+    async reset_password_for_email(email){
+        try {
+            const redirectTo = `${window.location.origin}/reset-password.html`;
+            const { error } = await window.supabaseClient.auth.resetPasswordForEmail(email, {
+                redirectTo
+            });
+            if (error) throw error;
+            return { success: true };
+        } catch (error) {
+            return { success: false, error: error.message };
+        }
+    },
+
+    async update_password(newPassword){
+        try {
+            const { data, error } = await window.supabaseClient.auth.updateUser({
+                password: newPassword
+            });
+            if (error) throw error;
+            return { success: true, user: data.user };
+        } catch (error) {
+            return { success: false, error: error.message };
+        }
+    },
 };
 
 window.SupabaseAuth = SupabaseAuth;
-
