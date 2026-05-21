@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const newPasswordSection = document.getElementById('new-password-section');
     const newPasswordError = document.getElementById('new-password-error');
     const newPasswordForm = document.getElementById('new-password-form');
-    const requestSession = document.getElementById('request-session');
+    const requestSection = document.getElementById('request-section'); // <--
     const emailInput = document.getElementById('email-input');
     const newPasswordInput = document.getElementById('new-password-input');
-    const repeatPasswordInput = document.getElementById('repeat-password-input');
+    const repeatPasswordInput = document.getElementById('repeat-new-password-input');
     
     let inRecoveryMode = false;
 
@@ -60,7 +60,48 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     // ---------- FORM 2: DEFINIR NOVA SENHA ----------
 
+    if (newPasswordForm) {
+        newPasswordForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // <--- Evita que a página recarregue e resete
 
+            showMessage(newPasswordError, "", ""); // <--- Limpa avisos anteriores
+
+            const newPassword = newPasswordInput.value;
+            const repeatPassword = repeatPasswordInput.value;
+
+            if (!newPassword || !repeatPassword) { // <--- Validação de campos vazios
+                showMessage(newPasswordError, "Por favor, preencha os campos em branco.", "#ff4444");
+                return;
+            }
+
+            if (newPassword !== repeatPassword) { // <--- Validação se as senhas são iguais
+                showMessage(newPasswordError, "Insira a mesma senha nos dois campos.", "#ff4444");
+                return;
+            }
+
+            // <--- Envia para o Supabase caso os requisitos sejam atendidos
+            const submitBtn = newPasswordForm.querySelector('button[type="submit"]');
+            setLoading(submitBtn, true, "Redefinir senha", "Atualizando...");
+
+            // <--- Chamando a função no Supabase para atualização de senha
+            try {
+                const result = await window.SupabaseAuth.update_user_password(newPassword);
+                
+                if (result.success) {
+                    showMessage(newPasswordError, "Senha alterada com sucesso! Redirecionando...", "#4CAF50");
+                    setTimeout(() => {
+                        window.location.href = "profile.html"; // Manda pro perfil após 2 segundos
+                    }, 2000);
+                } else {
+                    showMessage(newPasswordError, result.error || "Erro ao atualizar senha.", "#ff4444");
+                }
+            } catch (error) {
+                showMessage(newPasswordError, "Erro inesperado ao atualizar a senha.", "#ff4444");
+            } finally {
+                setLoading(submitBtn, false, "Redefinir senha", "Redefinir senha");
+            }
+        });
+    }
 
     // ---------- HELPERS ----------
 
