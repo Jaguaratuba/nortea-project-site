@@ -85,18 +85,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
             // <--- Chamando a função no Supabase para atualização de senha
             try {
-                const result = await window.SupabaseAuth.update_user_password(newPassword);
+                const result = await window.SupabaseAuth.update_password(newPassword);
                 
                 if (result.success) {
                     showMessage(newPasswordError, "Senha alterada com sucesso! Redirecionando...", "#4CAF50");
                     setTimeout(() => {
-                        window.location.href = "profile.html"; // Manda pro perfil após 2 segundos
+                        window.location.href = "profile.html"; // <--- Manda pro perfil após 2 segundos
                     }, 2000);
                 } else {
                     showMessage(newPasswordError, result.error || "Erro ao atualizar senha.", "#ff4444");
                 }
             } catch (error) {
                 showMessage(newPasswordError, "Erro inesperado ao atualizar a senha.", "#ff4444");
+                console.log(error);
             } finally {
                 setLoading(submitBtn, false, "Redefinir senha", "Redefinir senha");
             }
