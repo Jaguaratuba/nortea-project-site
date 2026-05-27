@@ -31,13 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (result.success) {
                 showSuccess("Login realizado com sucesso")
+                setTimeout(() => {
+                    // handleSuccessfulLogin(result.user);
+                    window.location.href = "profile.html";
+                }, 1500);
             } else {
                 showError(result.error)
+                setLoadingState(false);
             }
 
         } catch (error) {
             showError("Erro ao conectar com o servidor")
             console.error("Login error", error)
+            setLoadingState(false);
         }
 
         function showError(message) {
