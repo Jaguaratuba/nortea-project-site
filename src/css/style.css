@@ -9,7 +9,7 @@
 body { 
   color: #f7f7f7;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 0 0px;
+  padding: 0;
 }
 
 html, body {
@@ -58,7 +58,7 @@ body.reset-body{
 /* ------------------------------------------------ HEADER ------------------------------------------------ */
 
 header {
-  padding: 8px 100px;
+  padding: .5rem 6vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,12 +79,12 @@ header h1 {
 
 .header-profile {
     position: relative;
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
 
 .header-avatar {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     background: #f4f4f4;
     display: flex;
@@ -95,7 +95,7 @@ header h1 {
 }
 
 .header-avatar i {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #000;
 }
 
@@ -104,11 +104,11 @@ header h1 {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: .625rem;
 }
 
 .logo img {
-  height: 80px;
+  height: clamp(3.5rem, 7vw, 5rem);
   width: auto;
 }
 
@@ -116,7 +116,7 @@ header h1 {
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
   align-items: center;
 }
 
@@ -147,7 +147,7 @@ nav button.hedrBtn {
   justify-content: center;
   padding: 2px 20px;       
   height: 28px; 
-  border-radius: 6px;
+  border-radius: .375rem;
   line-height: 1;
   min-height: 0;            
   -webkit-appearance: none;
@@ -194,7 +194,7 @@ nav button.hedrBtnCadast i {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 70vh;
+  min-height: clamp(28rem, 65vh, 43rem);
   width: 100%;
   position: relative;
   padding: 0;
@@ -202,9 +202,9 @@ nav button.hedrBtnCadast i {
 }
 
 .hero-text {
-  width: min(50%, 650px);
+  width: min(50%, 40rem);
   max-width: 100%;
-  padding: clamp(20px, 8vh, 80px) clamp(10px, 5vw, 80px);
+  padding: clamp(2rem, 8vh, 5rem) clamp(1rem, 5vw, 5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -215,9 +215,9 @@ nav button.hedrBtnCadast i {
 
 .hero h2 {
   font-size: clamp(2rem, 4vw, 3.8rem);
-  max-width: 700px;
-  margin-bottom: 5px;
-  letter-spacing: 0.8px;
+  max-width: 44rem;
+  margin-bottom: .3rem;
+  letter-spacing: 0.05rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   text-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
@@ -228,17 +228,17 @@ nav button.hedrBtnCadast i {
 }
 
 .hero p {
-  max-width: 600px;
-  margin-bottom: 50px;
+  max-width: 37.5rem;
+  margin-bottom: clamp(1.5rem, 5vh, 3rem);
   color: #d4cdca;
   font-weight: 500;
   font-size: clamp(0.95rem, 1vw, 1.05rem);
 }
 
 .hero button {
-  padding: 14px 32px;
+  padding: .875rem 2rem;
   border: none;
-  border-radius: 6px;
+  border-radius: .375rem;
   background: #1e2c3a; 
   color: #e5e6f7;
   font-size: 1.1rem;
@@ -265,18 +265,54 @@ nav button.hedrBtnCadast i {
   z-index: 1;
 }
 
-@media (max-width: 1000px) {
-  .hero { padding: 40px 0; }
-  .hero-text { width: 100%; padding: 0 20px; }
-  .hero-slider { height: 100%; }
-  .hero h2 { font-size: clamp(2rem, 5vw, 3rem); }
-}
-
 .hero-divider {
   width: 100%;
   height: 25px;
   background: #2c3f4e;
   margin: 0 0 2rem 0;
+}
+
+@media (max-width: 62.5rem) {
+  .hero {
+    min-height: clamp(24rem, 55vh, 34rem);
+    padding: 2.5rem 0;
+  }
+
+  .hero-text {
+    width: 100%;
+    padding: 0 clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .hero h2 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+  }
+
+  .hero p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .hero {
+    min-height: clamp(22rem, 50vh, 30rem);
+  }
+
+  .hero-phrase {
+    white-space: normal;
+  }
+
+  .hero h2 {
+    font-size: clamp(1.7rem, 9vw, 2.5rem);
+  }
+
+  header {
+    padding-inline: var(--page-padding);
+  }
+
+  .container {
+    width: min(calc(100% - (var(--page-padding) * 2)), 62.5rem);
+    margin-inline: auto;
+  }
 }
 
 /* ------------------------------------------------ SLIDE ------------------------------------------------ */
@@ -395,8 +431,8 @@ nav button.hedrBtnCadast i {
 
 .feature {
   background: white;
-  padding: 30px;
-  border-radius: 8px;
+  padding: 2rem;
+  border-radius: .5rem;
   text-align: center;
 }
 
@@ -427,6 +463,7 @@ nav button.hedrBtnCadast i {
   --base-color: rgb(255, 255, 255);
   --text-color: #242324;
   --input-color: #000000;
+  --page-padding: 4%;
 }
 
 .wrapper form div.incorrect input{
@@ -440,7 +477,7 @@ nav button.hedrBtnCadast i {
 /* ------------------------------------------------ FOOTER ------------------------------------------------ */
 
 footer {
-  padding: 15px;
+  padding: .9375rem;
   text-align: center;
   font-size: 0.85rem;
   background: #000000;
@@ -459,7 +496,7 @@ footer {
   width: min(100%, 650px);
   flex: 1; 
   margin: 0 auto; 
-  padding: 40px 0;
+  padding: 2.5rem 2.5rem 0;
   background: rgb(255, 255, 255);
 }
 
@@ -496,7 +533,7 @@ form label{
   background-color: var(--accent-color);
   fill: var(--base-color);
   color: var(--base-color);
-  border-radius: 10px 0 0 10px;
+  border-radius: .625rem 0 0 .625rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -551,7 +588,7 @@ form button:hover, form button:focus{
   width: min(100%, 600px); 
   height: max-content;
   backdrop-filter: blur(10px);
-  padding: 25px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -582,7 +619,7 @@ form button:hover, form button:focus{
 .wrapper-reset {
   background-color: transparent;
   width: min(600px, calc(100% - 80px));
-  padding: 40px;
+  padding: 2.5rem;
   border-radius: 0;
   height: auto;
   display: flex;
@@ -636,7 +673,7 @@ form button:hover, form button:focus{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: .625rem;
 }
 
 /* ------------------------------------------------ ERROR ------------------------------------------------ */
@@ -659,7 +696,7 @@ a:hover{ text-decoration: underline; }
   header {
     flex-direction: column;
     align-items: center; 
-    padding: 15px 20px; 
+    padding: .9375rem 20px; 
     gap: 15px; 
   }
   
@@ -672,7 +709,7 @@ a:hover{ text-decoration: underline; }
 
   .wrapper-login h1, .wrapper-reset h1 { font-size: 2.2rem; }
   .wrapper-register h1 { font-size: 1.5rem; }
-  .wrapper-login, .wrapper-reset, .wrapper-register { padding: 20px; }
+  .wrapper-login, .wrapper-reset, .wrapper-register { padding: 1.25rem; }
 
   form label { height: 40px; width: 40px; font-size: 1.2rem; }
   form input { height: 40px; padding: 0.8em; font-size: 0.9rem; }
