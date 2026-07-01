@@ -9,6 +9,7 @@
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <script type="module" src="/src/js/supabase-config.js"></script>
     </head>
+
     <body>
 
         <header>
@@ -55,64 +56,35 @@
 
         <main class="container">
 
-            <!-- Card do perfil -->
-            <section class="profile-card">
-
-                <!-- AVATAR -->
-                <div class="avatar" id="avatar">
-                    <i class='bx bx-user' id="avatarIcon"></i>
-                    <img id="avatarImg" hidden>
-                </div>
-
-                <!-- input escondido -->
-                <input type="file" id="photoInput" accept="image/*" hidden>
-
-                <h3>Nome do Usuário</h3>
-                <p>@usuario</p>
-
-            </section>
-
             <!-- Menu lateral -->
             <section class="profile-content">
                 <nav class="menu">
-                    <button class="active">Configurações</button>
-                    <button onclick="location.href='chat.html'">Mensagens</button>
+                    <button onclick="location.href='profile.html'">Configurações</button>
+                    <button class="active">Mensagens</button>
                 </nav>
 
                 <!-- Área de conteúdo -->
                 <div class="content">
 
-                    <div class="settings">
-                    <h3>Configurações do Perfil</h3>
+                    <div class="chat-area">
 
-                    <form>
-                        <label>
-                        Nome
-                        <input type="text" placeholder="Nome">
-                        </label>
+                        <div class="chat-box">
+                            <div class="message received">
+                                <p>Olá! Como posso ajudar?</p>
+                            </div>
 
-                        <label>
-                        Sobrenome
-                        <input type="text" placeholder="Sobrenome">
-                        </label>
+                            <div class="message sent">
+                                <p>Oi! Quero falar sobre o projeto.</p>
+                            </div>
+                        </div>
 
-                        <label>
-                        Email
-                        <input type="email" placeholder="Email">
-                        </label>
+                        <form class="chat-form">
+                            <input type="text" placeholder="Digite sua mensagem...">
+                            <button type="submit">
+                                <i class='bx bx-send'></i>
+                            </button>
+                        </form>
 
-                        <label>
-                        Usuário
-                        <input type="text" placeholder="Usuário">
-                        </label>
-
-                        <label>
-                        ?
-                        <input type="password" placeholder="?">
-                        </label>
-
-                        <button type="submit">Salvar alterações</button>
-                    </form>
                     </div>
 
                 </div>
