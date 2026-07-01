@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             if (result.success) {
                 showMessage(
                     errorMessage,
-                    "Enviámos um link para o seu email. Verifique a caixa de entrada.",
+                    "Enviamos um link para o email. Verifique a caixa de entrada.",
                     "#4CAF50"
                 );
             } else {
