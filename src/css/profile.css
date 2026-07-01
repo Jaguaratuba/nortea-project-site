@@ -1,9 +1,8 @@
 /* ================= RESET ================= */
-* {
+* { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', Arial, sans-serif;
 }
 
 html, body {
@@ -11,9 +10,17 @@ html, body {
   height: 100%;
 }
 
-body {
-  background: #f4f4f4;
-  color: #333;
+body { 
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 0px;
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.445), rgba(255, 255, 255, 0.938)),
+  url("../../public/images/backgroundprofile.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* ================= HEADER ================= */
@@ -22,9 +29,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to left, #9574af, #491775, #140125, #000000);
-  width: 100%;
-  flex-shrink: 0;
+  background:#f7f7f7;
 }
 
 header h1 {
@@ -38,43 +43,46 @@ header h1 {
 }
 
 .logo img {
-  height: 50px;
+  height: 80px;
   width: auto;
-  filter: brightness(0.8) drop-shadow(0 0 20px rgba(255, 145, 0, 0.349));
 }
 
 nav {
   display: flex;
-  gap: 8px;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link-normal-button {
+  display: flex;
+  gap: 3px;
   align-items: center;
 }
 
 nav button {
   line-height: 1;
   border: none;
-  border-radius: 6px;
-  background: #dd7b0bec;
-  color: #ffffff;
+  background: transparent;
+  color: #000000;
   padding: 0;
   height: auto;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 0.3px;
-  box-shadow: 0 0 20px rgb(5, 33, 44);
 }
 
 nav button.hedrBtn {
   font-weight: 500;
   font-size: 0.8rem;
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex;      
+  align-items: center;  
   justify-content: center;
-  padding: 2px 20px;
-  height: 28px;
+  padding: 2px 20px;       
+  height: 28px; 
   border-radius: 6px;
   line-height: 1;
-  min-height: 0;
+  min-height: 0;            
   -webkit-appearance: none;
   appearance: none;
 }
@@ -84,33 +92,33 @@ nav button.hedrBtn i {
   font-size: 1rem;
 }
 
+nav button.hedrBtnCadast i {
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+
 .hedrBtn:hover {
-  background-color: #e6a04a;
-  box-shadow: 0 0 8px rgba(10, 7, 2, 0.5);
+  box-shadow: 0 0 8px rgba(10, 7, 2, 0.205);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .hedrBtnCadast {
   font-weight: 700;
-  background: #dd7b0b;
-  color: white;
+  background: rgba(207, 212, 221, 0.308);
+  color: #000000;
   border-radius: 16px;
   padding: 8px 25px;
   font-size: 0.8rem;
   cursor: pointer;
   letter-spacing: 0.3px;
+  box-shadow: 0 0 6px rgba(10, 7, 2, 0.205);
 }
 
 .hedrBtnCadast:hover {
-  box-shadow: 0 0 8px rgba(10, 7, 2, 0.5);
-  background-color: #e6a04a;
+  box-shadow: 0 0 8px rgba(10, 7, 2, 0.205);
+  background-color:   rgba(169, 174, 184, 0.308);
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-nav button.hedrBtnCadast i {
-  margin-left: 8px;
-  font-size: 0.9rem;
 }
 
 /* ================= PERFIL HEADER ================= */
@@ -228,13 +236,13 @@ nav button.hedrBtnCadast i {
   height: 120px;
   margin: 0 auto 15px;
   border-radius: 50%;
-  border: 6px solid #491775;
+  border: 6px solid #2a3b4e;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
-  background: #f4f4f4;
+  background: #ffffff;
 }
 
 .avatar i {
@@ -263,29 +271,32 @@ nav button.hedrBtnCadast i {
   width: 200px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .menu button {
   height: 48px;
+  width: 100%;
   padding: 0 15px;
   border: none;
   background: #fff;
   cursor: pointer;
-  margin-bottom: 10px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* MENU LATERAL weight 700 */
+  font-weight: 700;
   letter-spacing: 0.3px;
   min-width: 160px;
   display: flex;
   align-items: center;
+  border-radius: 8px;
+  justify-content: center;
 }
 
 .menu button:hover {
-  background: #eee;
+  background: #f7f9ff;
 }
 
 .menu button.active {
-  background: #4a148c;
+  background: #2a3b4e;
   color: #fff;
 }
 
@@ -293,7 +304,7 @@ nav button.hedrBtnCadast i {
 .content {
   flex: 1;
   background: #fff;
-  padding: 25px;
+  padding: 40px;
   border-radius: 10px;
 }
 
@@ -316,14 +327,14 @@ nav button.hedrBtnCadast i {
 
 .settings input {
   margin-top: 5px;
-  padding: 10px;
+  padding: 1em;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
 .settings input:focus {
   outline: none;
-  border-color: #4a148c;
+  border-color: #2a3b4e;
 }
 
 .settings button {
@@ -331,7 +342,7 @@ nav button.hedrBtnCadast i {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background: #4a148c;
+  background: #cccace;
   color: #fff;
   cursor: pointer;
 }
@@ -341,10 +352,10 @@ nav button.hedrBtnCadast i {
 }
 
 /* ================= FOOTER ================= */
-.footer {
-  margin-top: 40px;
+footer {
   padding: 15px;
   text-align: center;
-  background: #000;
-  color: #fff;
+  font-size: 0.85rem;
+  background: #000000;
+  color: #94a3b8;
 }
