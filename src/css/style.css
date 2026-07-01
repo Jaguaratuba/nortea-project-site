@@ -80,6 +80,7 @@ header h1 {
 .header-profile {
     position: relative;
     margin-left: 1.25rem;
+    flex-shrink: 0;
 }
 
 .header-avatar {
@@ -92,6 +93,13 @@ header h1 {
     justify-content: center;
     cursor: pointer;
     overflow: hidden;
+    flex-shrink: 0;
+}
+
+.header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header-avatar i {
@@ -122,7 +130,7 @@ nav {
 
 .nav-link-normal-button {
   display: flex;
-  gap: 3px;
+  gap: .3rem;
   align-items: center;
 }
 

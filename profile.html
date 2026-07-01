@@ -13,7 +13,7 @@
 
         <header>
             <div class="logo">
-                <img src="public/images/Logo.png" alt="Logo Pilar">
+                <img src="/images/Logo.png" alt="Logo Pilar">
                 <h1></h1>
             </div>
             <nav>
@@ -25,7 +25,8 @@
 
                 <div class="header-profile">
                     <div class="header-avatar" id="headerAvatar">
-                        <i class='bx bx-user'></i>
+                        <i class='bx bx-user' id="headerAvatarIcon"></i>
+                        <img id="headerAvatarImg" hidden>
                     </div>
 
                     <div class="header-menu" id="headerMenu">
@@ -125,7 +126,6 @@
         </footer>
 
         <script src="./src/js/supabase-auth.js" defer></script>
-        <script src="./src/js/icon.js" defer></script>
         <script src="./src/js/headerMenu.js" defer></script>
         <script src="./src/js/profileAvatar.js" defer></script>
 

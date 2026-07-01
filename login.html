@@ -65,12 +65,20 @@
             © 2026 - Footer show de bola
         </footer>
 
-        <script type="module" src="./src/js/supabase-config.js"></script>
         <script src="./src/js/supabase-auth.js" defer></script>
         <script src="./src/js/login.js" defer></script>
         <script src="./src/js/animationbutton.js" defer></script>
         <script src="./src/js/loginScroll.js" defer></script>
-        <script src="./src/js/icon.js" defer></script>
-        <script src="./src/js/headerMenu.js" defer></script>
+
+        <!-- If the user is already logged in, redirect to the profile page -->
+        <script>
+            document.addEventListener("DOMContentLoaded", async () => {
+                const { data } = await window.supabaseClient.auth.getUser();
+
+                if (data?.user) {
+                    window.location.href = "profile.html";
+                }
+            });
+        </script>
     </body>
 </html>

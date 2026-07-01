@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="src/css/profile.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-        <script type="module" src="/src/js/supabase-config.js"></script>
+        <script type="module" src="./src/js/supabase-config.js"></script>
     </head>
 
     <body>
@@ -26,7 +26,8 @@
 
                 <div class="header-profile">
                     <div class="header-avatar" id="headerAvatar">
-                        <i class='bx bx-user'></i>
+                        <i class='bx bx-user' id="headerAvatarIcon"></i>
+                        <img id="headerAvatarImg" hidden>
                     </div>
 
                     <div class="header-menu" id="headerMenu">
@@ -96,9 +97,9 @@
             © 2026 - Footer show de bola
         </footer>
 
-        <script src="/src/js/supabase-auth.js" defer></script>
-        <script src="/src/js/icon.js" defer></script>
-        <script src="/src/js/headerMenu.js" defer></script>
+        <script src="./src/js/supabase-auth.js" defer></script>
+        <script src="./src/js/headerMenu.js" defer></script>
+        <script src="./src/js/headerAvatar.js" defer></script>
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
