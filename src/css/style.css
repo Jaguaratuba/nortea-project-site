@@ -1,4 +1,4 @@
-/* ------------------------------------------------ GENERAL ------------------------------------------------ */
+/* ================= GENERAL ================= */
 
 * { 
   margin: 0;
@@ -42,7 +42,7 @@ body.reset-body{
   background-image: url("../../public/images/paisagem.png");
 }
 
-/* ------------------------------------------------ ANIMAÇÃO FADE ------------------------------------------------ */
+/* ================= ANIMAÇÃO FADE ================= */
 
 .fade-slide {
   opacity: 0;
@@ -55,7 +55,7 @@ body.reset-body{
   transform: translateY(0);
 }
 
-/* ------------------------------------------------ HEADER ------------------------------------------------ */
+/* ================= HEADER ================= */
 
 header {
   padding: .5rem 6vw;
@@ -84,16 +84,18 @@ header h1 {
 }
 
 .header-avatar {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    background: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    overflow: hidden;
-    flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 0.025rem solid #000;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 0;
 }
 
 .header-avatar img {
@@ -106,8 +108,76 @@ header h1 {
     font-size: 1.125rem;
     color: #000;
 }
+/* ================= DROPDOWN HEADER ================= */
 
-/* ------------------------------------------------ LOGO ------------------------------------------------ */
+.header-menu {
+  position: absolute;
+  top: 2.875rem;
+  right: 0;
+  background: white;
+  flex-direction: column;
+  min-width: 11.25rem;
+  padding: .5rem 0;
+  z-index: 999;
+  gap: .375rem;
+  border-radius: .5rem;
+
+  opacity: 0;
+  transform: translateY(-.3rem) scale(.95);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.header-menu.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.header-menu button {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  padding: .5rem 1rem;
+  border: none;
+  background: white;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #24292f;
+  cursor: pointer;
+  width: 100%;
+}
+
+.header-menu button i {
+  font-size: 1.125rem;
+  color: #57606a;
+}
+
+.header-menu button:hover {
+  background: #e0e0e069;
+}
+
+.header-menu .logout {
+  color: #c62828;
+}
+
+.header-menu .logout i {
+  color: #c62828;
+}
+
+.header-menu button span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.header-menu button:hover span {
+  transform: scale(1.06);
+}
+
+/* ================= LOGO ================= */
 
 .logo {
   display: flex;
@@ -120,7 +190,7 @@ header h1 {
   width: auto;
 }
 
-/* ------------------------------------------------ NAV ------------------------------------------------ */
+/* ================= NAV ================= */
 
 nav {
   display: flex;
@@ -196,7 +266,7 @@ nav button.hedrBtnCadast i {
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* ------------------------------------------------ HERO ------------------------------------------------ */
+/* ================= HERO ================= */
 
 .hero {
   display: flex;
@@ -323,7 +393,7 @@ nav button.hedrBtnCadast i {
   }
 }
 
-/* ------------------------------------------------ SLIDE ------------------------------------------------ */
+/* ================= SLIDE ================= */
 
 .slide {
   position: absolute;
@@ -396,7 +466,7 @@ nav button.hedrBtnCadast i {
   animation: captionShow 25s infinite;
 }
 
-/* ------------------------------------------------ CAROUSEL ------------------------------------------------ */
+/* ================= CAROUSEL ================= */
 
 .carousel {
   margin: 70px auto;
@@ -427,7 +497,7 @@ nav button.hedrBtnCadast i {
   display: none;
 }
 
-/* ------------------------------------------------ FEATURES ------------------------------------------------ */
+/* ================= FEATURES ================= */
 
 .features {
   background: linear-gradient(to right, #587085, #2c3f50, #2c3f50);
@@ -464,7 +534,7 @@ nav button.hedrBtnCadast i {
   align-content: center;
 }
 
-/* ------------------------------------------------ ROOT ------------------------------------------------ */
+/* ================= ROOT ================= */
 
 :root{
   --accent-color: #2c3f50;
@@ -482,7 +552,7 @@ nav button.hedrBtnCadast i {
   .wrapper{ width: min(600px, 100%); }
 }
 
-/* ------------------------------------------------ FOOTER ------------------------------------------------ */
+/* ================= FOOTER ================= */
 
 footer {
   padding: .9375rem;
@@ -492,7 +562,7 @@ footer {
   color: #94a3b8;
 }
 
-/* ------------------------------------------------ LOGIN/RESET/REGISTER SECTION ------------------------------------------------ */
+/* ================= LOGIN/RESET/REGISTER SECTION ================= */
 
 .login-section-login,
 .reset-section-reset {
@@ -516,7 +586,7 @@ footer {
   pointer-events: none;
 }
 
-/* ------------------------------------------------ FORM ------------------------------------------------ */
+/* ================= FORM ================= */
 
 form{
   width: min(22rem, 90%);
@@ -588,7 +658,7 @@ form button:hover, form button:focus{
   outline: none;
 }
 
-/* ------------------------------------------------ WRAPPER ------------------------------------------------ */
+/* ================= WRAPPER ================= */
 
 .wrapper-register {
   box-sizing: border-box;
@@ -601,7 +671,7 @@ form button:hover, form button:focus{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0; /* Garante que fique travado na esquerda */
+  margin: 0;
   flex: 1; 
   align-self: flex-start;
   -webkit-backdrop-filter: blur(10px);
@@ -684,21 +754,42 @@ form button:hover, form button:focus{
   gap: .625rem;
 }
 
-/* ------------------------------------------------ ERROR ------------------------------------------------ */
+/* ================= PAGE TRANSITION ================= */
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 99999;
+}
+
+#page-transition.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.auth-loading {
+  visibility: hidden;
+}
+
+/* ================= ERROR ================= */
 
 #error-message, .wrapper-login #error-message, .wrapper-reset #error-message{ color:#f06272; }
 .wrapper-login #error-message, .wrapper-reset #error-message{ margin-bottom: 10px; }
 form div.incorrect label{ background-color: #f06272; }
 form div.incorrect input{ border-color: #f06272; }
 
-/* ------------------------------------------------ LINKS ------------------------------------------------ */
+/* ================= LINKS ================= */
 
 a{ text-decoration: none; color: var(--accent-color); }
 a:hover{ text-decoration: underline; }
 
 .wrapper-login p a, .wrapper-reset p a { color: rgb(39, 78, 163); }
 
-/* ------------------------------------------------ RESPONSIVIDADE HEADER (820px) ------------------------------------------------ */
+/* ================= RESPONSIVIDADE HEADER (820px) ================= */
 
 @media (max-width: 820px) {
   header {
@@ -724,4 +815,4 @@ a:hover{ text-decoration: underline; }
   form button { padding: 0.7em 3em; font-size: 0.9rem; }
 }
 
-/* ------------------------------------------------ REGISTER ------------------------------------------------ */
+/* ================= REGISTER ================= */

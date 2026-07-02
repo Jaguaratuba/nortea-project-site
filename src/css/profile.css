@@ -132,45 +132,49 @@ nav button.hedrBtnCadast i {
 }
 
 .header-avatar {
-  width: 36px;
-  height: 36px;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
-  border: 2px solid #000;
-  background: #f4f4f4;
+  border: 0.025rem solid #000;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
+  flex-shrink: 0;
+  padding: 0;
 }
 
 .header-avatar i {
   font-size: 18px;
-  color: #000;
+  color: transparent;
 }
 
 .header-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* ================= DROPDOWN HEADER ================= */
 .header-menu {
   position: absolute;
-  top: 46px;
+  top: 2.875rem;
   right: 0;
-  background: none;
+  background: white;
   flex-direction: column;
-  min-width: 180px;
-  padding: 8px 0;
+  min-width: 11.25rem;
+  padding: .5rem 0;
   z-index: 999;
-  gap: 6px;
+  gap: .375rem;
+  border-radius: .5rem;
 
   opacity: 0;
-  transform: translateY(-5px) scale(0.95);
+  transform: translateY(-.3rem) scale(.95);
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity .2s ease, transform .2s ease;
 }
 
 .header-menu.show {
@@ -183,26 +187,26 @@ nav button.hedrBtnCadast i {
   display: flex;
   align-items: center;
   gap: .625rem;
-  padding: 8px 16px;
+  padding: .5rem 1rem;
   border: none;
-  background: none;
+  background: white;
   text-align: left;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 500; /* também weight 500 */
-  letter-spacing: 0.3px;
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: #24292f;
   cursor: pointer;
   width: 100%;
 }
 
 .header-menu button i {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #57606a;
 }
 
 .header-menu button:hover {
-  background: #e0e0e0;
+  background: #e0e0e069;
 }
 
 .header-menu .logout {
@@ -211,6 +215,15 @@ nav button.hedrBtnCadast i {
 
 .header-menu .logout i {
   color: #c62828;
+}
+
+.header-menu button span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.header-menu button:hover span {
+  transform: scale(1.06);
 }
 
 /* ================= CONTAINER ================= */
@@ -240,13 +253,14 @@ nav button.hedrBtnCadast i {
   height: 120px;
   margin: 0 auto 15px;
   border-radius: 50%;
-  border: 6px solid #2a3b4e;
+  border: 0.4rem solid #2a3b4e;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
-  background: #ffffff;
+  background: transparent;
+  padding: 0;
 }
 
 .avatar i {
@@ -257,6 +271,7 @@ nav button.hedrBtnCadast i {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .profile-card p {
@@ -443,6 +458,23 @@ footer {
   font-size: 0.85rem;
   background: #000000;
   color: #94a3b8;
+}
+
+/* ================= PAGE TRANSITION ================= */
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 99999;
+}
+
+#page-transition.show {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* ================= RESPONSIVO ================= */

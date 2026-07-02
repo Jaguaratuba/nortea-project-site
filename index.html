@@ -29,11 +29,11 @@
                     <button class="hedrBtn" onclick="location.href='about-us.html'">SOBRE</button>
                 </nav>
 
-                <button class="hedrBtnCadast" id="loginBtn" onclick="location.href='login.html'">
+                <button class="hedrBtnCadast auth-loading" id="loginBtn" onclick="location.href='login.html'">
                     ENTRAR <i class="bi bi-door-closed"></i>
                 </button>
 
-                <div class="header-profile" id="headerProfile" hidden>
+                <div class="header-profile auth-loading" id="headerProfile" hidden>
                     <div class="header-avatar" id="headerAvatar">
                         <i class='bx bx-user' id="headerAvatarIcon"></i>
                         <img id="headerAvatarImg" hidden>
@@ -42,22 +42,22 @@
                     <div class="header-menu" id="headerMenu">
                         <button onclick="location.href='profile.html'">
                             <i class='bx bx-cog'></i>
-                            Configurações
+                            <span>Configurações</span>
                         </button>
 
                         <button onclick="location.href='chat.html'">
                             <i class='bx bx-envelope'></i>
-                            Mensagens
+                            <span>Mensagens</span>
                         </button>
 
                         <button>
                             <i class='bx bx-archive'></i>
-                            Arquivos
+                            <span>Arquivos</span>
                         </button>
 
                         <button class="logout">
                             <i class='bx bx-arrow-from-left'></i>
-                            Sign out
+                            <span>Sign out</span>
                         </button>
                     </div>
                 </div>
@@ -159,6 +159,7 @@
             });
         </script>
 
+        <script src="./src/js/pageTransition.js" defer></script>
         <script src="./src/js/supabase-auth.js" defer></script>
         <script src="./src/js/animationbutton.js" defer></script>
         <script src="./src/js/loginScroll.js" defer></script>
@@ -166,6 +167,8 @@
         <script src="./src/js/headerMenu.js" defer></script>
         <script src="./src/js/headerAvatar.js" defer></script>
     </body>
+
+    <div id="page-transition"></div>
 </html>
 
 <!-- comentario teste -->

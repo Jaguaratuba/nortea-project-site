@@ -38,16 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     aberto = false;
   }
 
-  // Adiciona efeito de zoom leve nos botões ao hover
-  Array.from(menu.children).forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-      btn.style.transform = 'scale(1.05)';
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'scale(1)';
-    });
-  });
-
   /* Logout: encerra sessão e redireciona para a página inicial
   const logoutBtn = menu.querySelector('.logout');
   if (logoutBtn) {

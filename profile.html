@@ -30,25 +30,25 @@
                     </div>
 
                     <div class="header-menu" id="headerMenu">
-                    <button>
-                        <i class='bx bx-cog'></i>
-                        Configurações
-                    </button>
+                        <button onclick="location.href='profile.html'">
+                            <i class='bx bx-cog'></i>
+                            <span>Configurações</span>
+                        </button>
 
-                    <button>
-                        <i class='bx bx-envelope'></i>
-                        Mensagens
-                    </button>
+                        <button onclick="location.href='chat.html'">
+                            <i class='bx bx-envelope'></i>
+                            <span>Mensagens</span>
+                        </button>
 
-                    <button>
-                        <i class='bx bx-archive'></i>
-                        Arquivos
-                    </button>
+                        <button>
+                            <i class='bx bx-archive'></i>
+                            <span>Arquivos</span>
+                        </button>
 
-                    <button class="logout">
-                        <i class='bx bx-arrow-from-left'></i>
-                        Sign out
-                    </button>
+                        <button class="logout">
+                            <i class='bx bx-arrow-from-left'></i>
+                            <span>Sign out</span>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -125,6 +125,7 @@
             © 2026 - Footer show de bola
         </footer>
 
+        <script src="./src/js/pageTransition.js" defer></script>
         <script src="./src/js/supabase-auth.js" defer></script>
         <script src="./src/js/headerMenu.js" defer></script>
         <script src="./src/js/profileAvatar.js" defer></script>
@@ -146,5 +147,7 @@
         </script>
 
     </body>
+
+    <div id="page-transition"></div>
 </html> 
 

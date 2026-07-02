@@ -11,13 +11,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     const user = data?.user;
 
     if (!user) {
-        if (loginBtn) loginBtn.hidden = false;
-        if (headerProfile) headerProfile.hidden = true;
+        if (headerProfile) {
+            headerProfile.hidden = true;
+            headerProfile.classList.remove("auth-loading");
+        }
+
+        if (loginBtn) {
+            loginBtn.hidden = false;
+            loginBtn.classList.remove("auth-loading");
+        }
+
         return;
     }
 
-    if (loginBtn) loginBtn.hidden = true;
-    if (headerProfile) headerProfile.hidden = false;
+    if (loginBtn) {
+        loginBtn.hidden = true;
+        loginBtn.classList.remove("auth-loading");
+    }
+
+    if (headerProfile) {
+        headerProfile.hidden = false;
+        headerProfile.classList.remove("auth-loading");
+    }
 
     const avatarUrl = user.user_metadata?.avatar_url;
 
