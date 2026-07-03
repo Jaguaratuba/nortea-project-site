@@ -851,3 +851,63 @@ footer {
 }
 
 /* ================= REGISTER ================= */
+
+/* ================= REGISTER SUCCESS ================= */
+
+body.success-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+}
+
+.register-success-section {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 2rem var(--page-padding);
+  background: #fff;
+}
+
+.register-success-card {
+  width: min(100%, 42rem);
+  text-align: center;
+}
+
+.register-success-card h2 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+}
+
+.register-success-card p {
+  margin-bottom: 2rem;
+  color: #000;
+  font-size: clamp(.95rem, 1vw, 1.05rem);
+  font-weight: 500;
+}
+
+.register-success-card button {
+  padding: .875rem 2rem;
+  border: none;
+  border-radius: .375rem;
+  background: #1e2c3a;
+  color: #e5e6f7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.register-success-card button:hover {
+  transform: scale(1.02);
+  background-color: #16212c;
+  box-shadow: 0 0 .5rem rgba(10, 7, 2, 0.39);
+}

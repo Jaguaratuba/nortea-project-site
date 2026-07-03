@@ -14,21 +14,31 @@ const SupabaseAuth = {
         }
     },
 
-    async sign_up(email, password, metadata = {}){
+    async sign_up(email, password, metadata = {}) {
         try {
+            const redirectTo = `${window.location.origin}/register-success.html`;
+
             const { data, error } = await window.supabaseClient.auth.signUp({
                 email: email,
                 password: password,
                 options: {
-                    data: metadata
+                    data: metadata,
+                    emailRedirectTo: redirectTo
                 }
             });
 
             if (error) throw error;
 
-            return { success: true, user: data.user, session: data.session };
+            return {
+                success: true,
+                user: data.user,
+                session: data.session
+            };
         } catch (error) {
-            return { success: false, error: error.message };
+            return {
+                success: false,
+                error: error.message
+            };
         }
     },
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cadastro realizado</title>
+
+        <link rel="stylesheet" href="src/css/style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+        <script type="module" src="./src/js/supabase-config.js"></script>
+    </head>
+
+    <body class="success-body">
+        <header class="header-login">
+            <div class="logo">
+                <img src="public/images/Logo.png" alt="Logo Pilar">
+                <h1></h1>
+            </div>
+
+            <nav>
+                <nav class="nav-link-normal-button">
+                    <button class="hedrBtn" onclick="location.href='index.html'">INÍCIO</button>
+                    <button class="hedrBtn" onclick="location.href='help.html'">AJUDA</button>
+                    <button class="hedrBtn" onclick="location.href='about-us.html'">SOBRE</button>
+                </nav>
+
+                <button class="hedrBtnCadast" id="loginBtn" onclick="location.href='login.html'">
+                    ENTRAR <i class="bi bi-door-closed"></i>
+                </button>
+            </nav>
+        </header>
+
+        <main class="register-success-section">
+            <div class="register-success-card">
+                <h2>Cadastro realizado com sucesso</h2>
+                <p>Seu email foi confirmado. Agora você pode continuar navegando pelo site.</p>
+
+                <button onclick="location.href='index.html'">
+                    Voltar para o início
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            © 2026 - Footer show de bola
+        </footer>
+
+        <div id="page-transition"></div>
+
+        <script src="./src/js/pageTransition.js" defer></script>
+        <script src="./src/js/supabase-auth.js" defer></script>
+        <script src="./src/js/animationbutton.js" defer></script>
+    </body>
+</html>
